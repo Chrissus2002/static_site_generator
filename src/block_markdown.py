@@ -1,4 +1,4 @@
-from htmlnode import HTMLNode, LeafNode, ParentNode
+from htmlnode import ParentNode
 from enum import Enum
 from inline_markdown import text_to_textnodes
 from textnode import text_node_to_html_node
@@ -31,11 +31,9 @@ def block_to_block_type(markdown_block):
     else:
         return 'paragraph'
 
-def markdown_block_to_html_node(markdown_file):
+def markdown_to_html_node(markdown_file):
     children_list = []
-    markdown_string = ""
-    with open(markdown_file, 'r') as f:
-        markdown_string = f.read()
+    markdown_string = markdown_file
     markdown_blocks = markdown_to_blocks(markdown_string)
     for block in markdown_blocks:
         children_list.append(change_block_to_html(block))
@@ -107,5 +105,3 @@ def text_to_children(text):
         leaf_nodes.append(text_node_to_html_node(node))
     return leaf_nodes
 
-
-markdown_block_to_html_node('Markdown.md')
