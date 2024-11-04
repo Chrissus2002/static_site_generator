@@ -8,7 +8,7 @@ Welcome to my static site generator project. This program grabs a markdown file 
 
 * Download the repository
 * Navigate to the directory in the CLI
-* Just run the program with main.sh
+* Just run the program with
 ```./main.sh```
 
 ## Additional info
